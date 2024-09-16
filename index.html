@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人主页</title>
+  
+  <style>
+    body {
+      
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      transition: background-color 0.5s ease;
+    }
+    .navbar {
+      background-color: #1293DC;
+      overflow: hidden;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 16px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .navbar a:hover {
+      background-color: #1276DC;
+      color: #eaeaea;
+    }
+    .container {
+      padding: 40px;
+    }
+    .section {
+      background-color: #fff;
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+    .section:hover {
+      transform: translateY(-10px);
+    }
+    .section-header {
+      font-size: 32px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+    .section-content {
+      margin-top: 15px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .like {
+      background-color: #f8f8f8;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    .footer {
+      background-color: #1293DC;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
+
+    #typing-text {
+      font-family: 'Courier New', Courier, monospace;
+      text-align:center;
+      white-space: pre; /* 保持空格和换行 */
+    }
+        #typing-text1{
+      font-family: 'Courier New', Courier, monospace;
+      text-align:center;
+      white-space: pre; /* 保持空格和换行 */
+    }
+        .article {
+      background-color: #f8f8f8;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#about">关于我</a>
+    <a href="#skills">技能</a>
+    <a href="#like">喜欢</a>
+    <a href="#contact">联系我</a>
+  </div>
+<h1 id="typing-text"></h1>
+<div id="typing-text1"></div>
+  <div class="container">
+    <div class="section" id="about">
+      <h2 class="section-header">关于我</h2>
+      <p class="section-content">我是一个充满活力与好奇心的阳光男孩，对世界充满热爱，总是渴望踏上新的旅程，去探索未知的美好。</p>
+    </div>
+
+    <div class="section" id="skills">
+      <h2 class="section-header">技能</h2>
+      <p class="section-content">英语：流利交流与阅读，为探索世界开启语言之门。</p>
+      <p class="section-content">物理：以好奇之心解读自然奥秘。</p>
+      <p class="section-content">历史：从古老故事中汲取智慧，感悟文明历程。</p>
+      <p class="section-content">地理：熟知山川湖海，心怀地球壮丽画卷。</p>
+    </div>
+
+    <div class="section" id="post">
+      <h2 class="section-header">文章</h2>
+    </div>
+    <div class="section" id="like">
+      <h2 class="section-header">喜欢</h2>
+      <div class="section-content">
+        <div class="like">
+          <h3>Beyond 乐队</h3>
+          <p>激昂旋律与深刻歌词交织，成为心中至爱摇滚乐队。</p>
+        </div>
+        <div class="like">
+          <h3>Alan Walker</h3>
+          <p>电音节奏如魔法触动心灵，他是我最爱的电音歌手。</p>
+        </div>
+        <div class="like">
+          <h3>Minecraft_我的世界</h3>
+          <p>在这个创意无限的游戏世界，尽情挥洒想象，构建梦幻王国。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <h2 class="section-header">联系我</h2>
+      <p class="section-content">Email: littlechengoodluck@hotmail.com</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>I want to make friends with you</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        window.scrollTo({
+          top: targetElement.offsetTop - 60, // 减去导航栏高度
+          behavior: 'smooth'
+        });
+      });
+    });
+      function typeText(element, text, index = 0) {
+    if (index < text.length) {
+      element.innerHTML = text.substring(0, index + 1) + "<span class='cursor'>|</span>"; // 添加光标
+      setTimeout(() => {
+        typeText(element, text, index + 1);
+      }, 100); // 调整时间间隔来控制打字速度
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.getElementById('typing-text');
+    const text = "Hello I'm Reoame👋"; // 要显示的文本
+    typeText(textElement, text);
+  });
+   function typeText(element, text, index = 0) {
+    if (index < text.length) {
+      element.innerHTML = text.substring(0, index + 1) + "<span class='cursor'>|</span>"; // 添加光标
+      setTimeout(() => {
+        typeText(element, text, index + 1);
+      }, 100); // 调整时间间隔来控制打字速度
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.getElementById('typing-text1');
+    const text = "你好我是Reoame👋"; // 要显示的文本
+    typeText(textElement, text);
+  });
+  </script>
+</body>
+</html>
