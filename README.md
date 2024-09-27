@@ -14,7 +14,7 @@
 
 ## 文章
 
- - [few,a few,little,a little的区别](https://Reoame.github.io/post/1.md)
+ - [few,a few,little,a little的区别](https://Reoame.github.io/post/1.html)
 
 ## 喜欢
 - **Beyond 乐队**：激昂旋律与深刻歌词交织，成为心中至爱摇滚乐队。
